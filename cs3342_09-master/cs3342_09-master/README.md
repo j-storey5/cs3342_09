@@ -181,7 +181,7 @@ How many valid sentences are there in this language?
 
 ## A2.6
 
-There are 60 unique sentences that can be made in the language. I tried to find a way to get to infinite through the grammar rules but I could not find any proof for there being infinitely many solutions. So, I have settled on 60.
+There are 60 unique sentences that can be made in the language. Theroretically under these rules you could enter an infinite loop by repeatingly putting lazy or smelly and never getting out of S2. I discovered this while making my State Machine Diagram>
 
 
 ## Q2.7 (1 point for the level, 2 for the sentence)
