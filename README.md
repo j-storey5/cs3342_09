@@ -42,7 +42,10 @@ represent the tiles.
 
 ## A1.1
 
-«replace this with your answer»
+S -> r S g S b
+r -> "r"
+g -> "g"
+b -> "b"
 
 
 ## Q1.2  (1 point for the O() answer, 2 for the sentence)
@@ -53,7 +56,7 @@ In one sentence, explain why.
 
 ## A1.2
 
-«replace this with your answer»
+Memory required will likely be O(n), because the parser is performing one comparison for each tile.
 
 
 # Q2
@@ -82,7 +85,12 @@ Write the BNF (not EBNF) description for this language.
 
 ## A2.1
 
-«replace this with your answer»
+<sentence> ::= "The" adjective noun verb adv
+<adjective> ::= "" | X adj
+<adj> ::= "lazy" | "smelly"
+<noun> ::== "dog" | "cat"
+<adverb> ::= "" | adverb
+<adverb> ::= "slowly" | "noisily"
 
 
 ## Q2.2 (5 points)
@@ -91,8 +99,11 @@ Write this grammar using EBNF with common extensions
 
 ## A2.2
 
-«replace this with your answer»
-
+<sentence> ::= "The" {adjective} noun verb [adverb]
+<adjective>::= "lazy" | "smelly"
+<noun> ::= "dog" | "cat"
+<adverb> ::= "slowly" | "noisily"
+<verb> ::= "ate"|"ran"
 
 ## Q2.3 (6 points)
 
@@ -109,7 +120,7 @@ Write this grammar using EBNF with common extensions
 
 ## A2.3
 
-«replace this with your answer»
+image is FSM_Diagram_Storey.PNG
 
 
 ## Q2.4 (6 points)
@@ -124,9 +135,23 @@ Current state | Next word | Next state
 (hint: my version has 13 entries. Yours _might_ be different)
 
 ## A2.4
-
-«replace this with your answer»
-
+Current state | Next word | Next state
+--------------|-----------|-----------
+    S0        |    the    |     S1
+    S1        |    lazy   |     S2
+    S1        |   smelly  |     S2
+    S1        |    cat    |     S3
+    S1        |    dog    |     S3
+    S2        |    lazy   |     S2
+    S2        |   smelly  |     S2
+    S2        |    cat    |     S3
+    S2        |    dog    |     S3
+    S3        |    ate    |     S4
+    S3        |    ran    |     S4
+    S4        |   slowly  |     S5
+    S4        |   noisily |     S5
+    S4        |    EOI    |     END
+    S5        |    EOI    |     END
 
 ## Q2.5 (12 points)
 
@@ -154,8 +179,7 @@ How many valid sentences are there in this language?
 
 ## A2.6
 
-«replace this with your answer»
-
+There are 60 unique sentences that can be made in the language. Theroretically under these rules you could enter an infinite loop by repeatingly putting lazy or smelly and never getting out of S2. I discovered this while making my State Machine Diagram.
 
 ## Q2.7 (1 point for the level, 2 for the sentence)
 
@@ -164,4 +188,4 @@ explain why.
 
 ## A2.7
 
-«replace this with your answer»
+Chomsky Level 2 because the language requires a list of both terminals and non terminals whose meaning is fixed.
