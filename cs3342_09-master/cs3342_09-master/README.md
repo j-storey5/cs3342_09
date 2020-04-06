@@ -181,7 +181,7 @@ How many valid sentences are there in this language?
 
 ## A2.6
 
-Technically, infinite, because stringing adjectives together is a sentence under these grammar rules, but there are 60 unique sentences that can be made in the language.
+There are 60 unique sentences that can be made in the language. I tried to find a way to get to infinite through the grammar rules but I could not find any proof for there being infinitely many solutions. So, I have settled on 60.
 
 
 ## Q2.7 (1 point for the level, 2 for the sentence)
